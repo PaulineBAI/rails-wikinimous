@@ -1,0 +1,13 @@
+
+<div class="title d-flex align-items-center border-bottom pb-3 mb-5">
+<!--   <%# if @article.title || @article.content %>
+  <p>Article was successfully updated.</p> -->
+  <h1><%= @article.title %></h1>
+  <%= link_to edit_article_path do %>
+    <i class="fas fa-pencil-alt ml-3"></i>
+  <% end %>
+  <%= link_to article_path, method: :delete, data: { confirm: "Delete <<#{@article.title}>>?"} do %>
+    <i class="fas fa-trash-alt ml-2"></i>
+  <% end %>
+</div>
+<p><%= @article.content %></p>

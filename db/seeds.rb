@@ -5,3 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+puts "Destroy all articles"
+Article.destroy_all
+puts "#{Article.count} in database"
+
+require 'faker'
+
+articles = []
+
+10.times do
+  articles.push({title: Faker::Book.title, content: Faker::Movie.quote })
+end
+
+puts "Create 10 articles"
+Article.create(articles)
+puts "#{Article.count} articles created"
